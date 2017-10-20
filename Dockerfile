@@ -4,7 +4,7 @@ MAINTAINER foursue@gmail.com
 # php ext
 RUN apk update && \
     apk --no-cache upgrade && \
-RUN apk add libmcrypt-dev mysql-client git
+    apk add libmcrypt-dev mysql-client git
 RUN git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis
 RUN docker-php-ext-install mcrypt pdo_mysql json mbstring redis
 
