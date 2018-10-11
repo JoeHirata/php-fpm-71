@@ -1,5 +1,4 @@
 FROM php:7.1-fpm-alpine
-MAINTAINER foursue@gmail.com
 
 # php ext
 RUN apk update && \
@@ -12,5 +11,8 @@ RUN docker-php-ext-install mcrypt pdo_mysql json mbstring redis
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN composer config -g repos.packagist composer https://packagist.jp
-RUN composer global require hirak/prestissimo
+RUN composer global require hirak/prestissimoo
+
+# detail config
+COPY php.ini /usr/local/etc/php/
 
